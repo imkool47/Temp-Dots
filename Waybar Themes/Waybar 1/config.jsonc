@@ -1,0 +1,86 @@
+/* ---- 💫 https://github.com/Imkool47 💫 ---- */
+// DittoWaybar
+
+{
+	"include": "~/.config/waybar/modules",
+	"layer": "top",
+	"position": "top",
+	"height": 14,
+	"margin-left": 10,
+	"margin-right": 10,
+	"margin-top": 2,
+
+	"modules-left": [
+		"custom/menu",
+		"custom/separator#blank",
+		"clock",
+		"custom/separator#blank",
+		"hyprland/window",
+	],
+
+	// "custom/separator#taskbar-separator",
+	// "wlr/taskbar",
+
+	"modules-center": [
+		"hyprland/workspaces"
+	],
+
+	"modules-right": [
+		// "custom/separator#blank",
+		// "wlr/taskbar",
+		"custom/separator#blank",
+		"battery",
+		// "custom/separator#blank",
+		// "network",
+		"custom/separator#dot-line",
+		// "bluetooth",
+		"custom/separator#blank",
+		"backlight",
+		"custom/separator#dot-line",
+		"tray",
+		"custom/separator#dot-line",
+		// "mpris",
+		"custom/separator#blank",
+		"pulseaudio",
+		"custom/separator#blank",
+		"custom/cava_mviz",
+		"custom/playerctl",
+		"custom/separator#dot-line",
+		"custom/updater",
+		"custom/separator#dot-line",
+		"custom/swaync",
+		"custom/separator#dot-line",
+		"custom/power"
+	],
+
+
+	// Additional format / customize modules
+
+	"custom/power": {
+		"format": " ",
+		"icon-size": 20,
+		"tooltip": false
+	},
+
+	"clock": {
+		"format": "{:%I:%M %p - %d/%b}",  // 12-hour format with AM/PM
+		"tooltip": false
+	},
+
+	// Network (Wi-Fi) module configuration
+	// "network": {
+	// 	"format-wifi": " {essid}",
+	// 	"format-ethernet": " {interface}",
+	// 	"tooltip": false
+	// },
+
+	// "custom/separator#taskbar-separator": {
+	// 	"format": " ",
+	// 	"tooltip": false
+	// },
+
+	"custom/separator#taskbar-separator": {
+		"format": " │ ",
+		"tooltip": false
+	},
+}

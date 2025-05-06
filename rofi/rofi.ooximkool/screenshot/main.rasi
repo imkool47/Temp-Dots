@@ -1,0 +1,131 @@
+//by : @Imkool47
+
+@import "screenshot/font.rasi"
+@import "~/.cache/wal/colors-rofi-pywal.rasi"
+
+// PROPERTIES
+* {
+    background:                  #010101;
+    background-alt:              #010101;
+    selected:                    #141414;
+    active:                      #141414;
+    urgent:                      #808080;
+}
+
+// WINDOW
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       450;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    enabled:                     true;
+    border:                      2px solid;
+    border-radius:               15px;
+    border-color:                @foreground;
+    background-color:            rgba(0, 0, 0, 0.4); // Same semi-transparent color
+}
+
+
+// MAINBOX
+mainbox {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview", "message" ];
+}
+
+// TOP BAR
+inputbar {
+    enabled:                     true;
+    spacing:                     0px;
+    padding:                     50px 80px;
+    background-color:            rgba (0, 0, 0, 0.4); // semi-transparent black
+    transparency:                "real"; // Enable real transparency
+    children:                    [ "textbox-prompt-colon", "dummy", "prompt" ];
+}
+dummy {
+    // CENTER PADDING
+    background-color:            transparent;
+}
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "  Screenshot";
+    padding:                     12px;
+    border-radius:               100%;
+    background-color:            @active;
+    text-color:                  #FFF;
+}
+prompt {
+    enabled:                     true;
+    padding:                     12px;
+    border-radius:               100%;
+    background-color:            @active;
+    text-color:                  #FFF;
+}
+
+// LIST
+listview {
+    enabled:                     true;
+    columns:                     3;
+    lines:                       1;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+
+    spacing:                     15px;
+    margin:                      15px;
+    background-color:            transparent;
+    cursor:                      "default";
+}
+
+// ELEMENTS
+element {
+    enabled:                     true;
+    padding:                     30px 10px;
+    border-radius:               12px;
+    background-color:            @background-alt;
+    text-color:                  #FFF;
+    cursor:                      pointer;
+}
+element-text {
+    font:                        "feather bold 32";
+    background-color:            transparent;
+    text-color:                  #FFF;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+element selected.normal {
+    background-color:            var(selected);
+    text-color:                  var(background);
+}
+
+// MESSAGE
+message {
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     15px;
+    border-radius:               0px;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+}
+textbox {
+    background-color:            inherit;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
